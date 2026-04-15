@@ -1,6 +1,6 @@
 import { getLibraryISRCCache, setLibraryISRCCache } from "./cache";
 import { requestTrackISRCs } from "./isrc";
-import { refreshSaveCounts } from "./save-count";
+import { refreshSaveCountLabels } from "./save-count-labels";
 
 export function initLibraryISRCCache() {
 	Spicetify.Platform.LibraryAPI.getEvents().addListener("update", updateLibraryISRCCache);
@@ -41,7 +41,7 @@ async function updateLibraryCacheInternal() {
 		LibraryISRCCache.reUpdate = false;
 		updateLibraryCacheInternal();
 	} else {
-		refreshSaveCounts();
+		refreshSaveCountLabels();
 	}
 	LibraryISRCCache.updateRunning = false;
 }

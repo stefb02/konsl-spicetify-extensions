@@ -2,7 +2,7 @@ import { saveCache } from "./cache";
 import { getISRC } from "./isrc";
 import { initLibraryISRCCache } from "./library";
 import { getTranslation } from "./locale";
-import { initSaveCount } from "./save-count";
+import { initSaveCountLabels } from "./save-count-labels";
 
 async function main() {
 	while (
@@ -20,7 +20,7 @@ async function main() {
 	const { ContextMenu, Platform, URI } = Spicetify;
 
 	initLibraryISRCCache();
-	initSaveCount();
+	initSaveCountLabels();
 
 	window.addEventListener("beforeunload", () => saveCache());
 
